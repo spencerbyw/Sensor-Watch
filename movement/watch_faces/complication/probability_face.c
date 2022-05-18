@@ -167,7 +167,10 @@ bool probability_face_loop(movement_event_t event, movement_settings_t *settings
             movement_request_tick_frequency(PROBABILITY_ANIMATION_TICK_FREQUENCY);
             break;
         case EVENT_TIMEOUT:
-            movement_move_to_face(0);
+            // Ignore timeout because you might want to roll dice several times throughout a game
+            break;
+        case EVENT_LOW_ENERGY_UPDATE:
+            // Ignore low energy update because you might want to roll dice several times throughout a game
             break;
         default:
             break;
